@@ -4,7 +4,7 @@
 # 참고: 'theme'과 'remote_theme' 중 한 가지만 사용합니다.
 # 보통 remote_theme 사용 권장 (GitHub Pages 환경에서)
 # theme: "minimal-mistakes-jekyll"
-remote_theme: "mmistakes/minimal-mistakes@4.27.1"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 # Minimal Mistakes 스킨 옵션: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 minimal_mistakes_skin: "air"
