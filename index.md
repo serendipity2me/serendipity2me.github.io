@@ -1,39 +1,42 @@
 ---
-layout: splash
-permalink: /
-hidden: true
+layout: home
+author_profile: true
 header:
-  overlay_color: "#5e616c"
-  overlay_image: /assets/images/mm-home-page-feature.jpg
-  actions:
-    - label: "<i class='fas fa-download'></i> Install now"
-      url: "/docs/quick-start-guide/"
-excerpt: >
-  A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios.<br />
-  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.27.1">Latest release v4.27.1</a></small>
-feature_row:
-  - image_path: /assets/images/mm-customizable-feature.png
-    alt: "customizable"
-    title: "Super customizable"
-    excerpt: "Everything from the menus, sidebars, comments, and more can be configured or set with YAML Front Matter."
-    url: "/docs/configuration/"
-    btn_class: "btn--primary"
-    btn_label: "Learn more"
-  - image_path: /assets/images/mm-responsive-feature.png
-    alt: "fully responsive"
-    title: "Responsive layouts"
-    excerpt: "Built with HTML5 + CSS3. All layouts are fully responsive with helpers to augment your content."
-    url: "/docs/layouts/"
-    btn_class: "btn--primary"
-    btn_label: "Learn more"
-  - image_path: /assets/images/mm-free-feature.png
-    alt: "100% free"
-    title: "100% free"
-    excerpt: "Free to use however you want under the MIT License. Clone it, fork it, customize it... whatever!"
-    url: "/docs/license/"
-    btn_class: "btn--primary"
-    btn_label: "Learn more"      
+  overlay_image: /assets/images/header.jpg
+  overlay_filter: 0.5
+  caption: "기록이 쌓여가는 작은 연구실"
+title: "Welcome to My Music Lab"
+excerpt: "음악을 연구하고, 배우며, 함께 성장하는 공간"
 ---
 
-{% include feature_row %}
+## 🎵 About This Blog
+안녕하세요! 이 블로그는 **음악을 공부하고 연구하는 기록 공간**입니다.  
+사운드 디자인, 리듬 분석, 미디 프로그래밍, 그리고 다양한 음악적 생각들을 자유롭게 적어 내려갑니다.
 
+> "지금의 내가 내일의 나를 만든다."
+
+블로그를 통해 저의 성장을 함께 지켜봐 주세요! 😊
+
+---
+
+## ✍️ Latest Posts
+<ul>
+  {% for post in site.posts limit:5 %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+    </li>
+  {% endfor %}
+</ul>
+
+---
+
+## 🛠 Categories
+{% for category in site.categories %}
+- [{{ category[0] }}](/categories/#{{ category[0] | slugify }})
+{% endfor %}
+
+---
+
+## 📬 Contact
+궁금한 점이나 함께 이야기 나누고 싶으신 분은 [Contact](/contact/) 페이지를 통해 언제든 편하게 연락 주세요!
