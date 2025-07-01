@@ -1,170 +1,179 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# Site-wide settings and configuration for Minimal Mistakes theme
 
 # Theme Settings
-#
-# Review documentation to determine if you should use `theme` or `remote_theme`
-# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
+# 참고: 'theme'과 'remote_theme' 중 한 가지만 사용합니다.
+# 보통 remote_theme 사용 권장 (GitHub Pages 환경에서)
+# theme: "minimal-mistakes-jekyll"
+remote_theme: "mmistakes/minimal-mistakes@4.27.1"
 
-#theme                  : "minimal-mistakes-jekyll"
-remote_theme           : "mmistakes/minimal-mistakes@4.27.1"
-minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# Minimal Mistakes 스킨 옵션: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "air"
 
 # Site Settings
-locale                   : "en-US"
-rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Site Title"
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : "https://serendipity2me.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-breadcrumbs              : # true, false (default)
-words_per_minute         : 200
-enable_copy_code_button  : # true, false (default)
-copyright                : # "copyright" name, defaults to site.title
-copyright_url            : # "copyright" URL, defaults to site.url
+locale: "en-US"
+# rtl: true # 오른쪽에서 왼쪽으로 쓰는 언어일 경우 true 설정
+title: "My Music Lab"
+title_separator: "-"
+subtitle: "음악을 연구하고 배우는 공간"
+name: "Your Name"
+description: "An amazing website."
+url: "https://serendipity2me.github.io"
+baseurl: "" # 하위 경로에 배포할 경우 "/blog" 식으로 설정
+
+# GitHub repository 정보 (자동 링크 생성에 도움)
+repository: "serendipity2me/serendipity2me.github.io"
+
+# 사이트 대표 이미지, 로고 등 (옵션)
+teaser: "/assets/images/teaser.jpg" # 기본 티저 이미지 경로
+logo: "/assets/images/logo.png"     # 로고 이미지 경로
+
+masthead_title: "My Music Lab" # 마스트헤드 제목 (비워두면 site.title 사용)
+breadcrumbs: false # 경로 표시 켜기/끄기 (true, false)
+
+words_per_minute: 200 # 읽기 속도 (읽는 시간 표시용)
+enable_copy_code_button: true # 코드 복사 버튼 사용 여부
+
+# 저작권 표시
+copyright: "© 2025 Your Name"
+copyright_url: "https://serendipity2me.github.io"
+
+# 댓글 설정 (필요한 서비스만 활성화)
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
-  disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
-  discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
-  facebook:
-    # https://developers.facebook.com/docs/plugins/comments
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
-  utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
-  giscus:
-    repo_id              : # Shown during giscus setup at https://giscus.app
-    category_name        : # Full text name of the category
-    category_id          : # Shown during giscus setup at https://giscus.app
-    discussion_term      : # "pathname" (default), "url", "title", "og:title"
-    reactions_enabled    : # '1' for enabled (default), '0' for disabled
-    theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
-    strict               : # 1 for enabled, 0 for disabled (default)
-    input_position       : # "top", "bottom" # The comment input box will be placed above or below the comments
-    emit_metadata        : # 1 for enabled, 0 for disabled (default) # https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#imetadatamessage
-    lang                 : # "en" (default)
-    lazy                 : # true, false # Loading of the comments will be deferred until the user scrolls near the comments container.
-  staticman:
-    branch               : # "master"
-    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+  provider: false
+  # provider: "disqus"
+  # disqus:
+  #   shortname: "your-disqus-shortname"
+
+# reCaptcha 설정 (댓글에 사용하는 경우)
 reCaptcha:
-  siteKey                :
-  secret                 :
+  siteKey: ""
+  secret: ""
+
+# RSS Feed 설정
 atom_feed:
-  path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+  path: "feed.xml" # 기본값 feed.xml
+  hide: false
+
+# 검색 설정
+search: true
+search_full_content: false
+search_provider: "lunr"
+
 lunr:
-  search_within_pages    : # true, false (default)
+  search_within_pages: true
+
 algolia:
-  application_id         : # YOUR_APPLICATION_ID
-  index_name             : # YOUR_INDEX_NAME
-  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : # true (default), false
+  application_id: ""
+  index_name: ""
+  search_only_api_key: ""
+  powered_by: true
+
 google:
-  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
-  instant_search         : # false (default), true
-# SEO Related
-google_site_verification :
-bing_site_verification   :
-naver_site_verification  :
-yandex_site_verification :
-baidu_site_verification  :
+  search_engine_id: ""
+  instant_search: false
 
-# Social Sharing
+# SEO 관련 인증 (필요시 설정)
+google_site_verification: ""
+bing_site_verification: ""
+naver_site_verification: ""
+yandex_site_verification: ""
+baidu_site_verification: ""
+
+# 소셜 미디어 계정 설정
 twitter:
-  username               :
+  username: ""
 facebook:
-  username               :
-  app_id                 :
-  publisher              :
-og_image                 : # Open Graph/Twitter default site image
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
+  username: ""
+  app_id: ""
+  publisher: ""
+
+og_image: "/assets/images/og-default.png"
+
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
-
-# Analytics
-analytics:
-  provider               : # false (default), "google", "google-universal", "google-gtag", "custom"
-  google:
-    tracking_id          :
-    anonymize_ip         : # true, false (default)
-
-
-# Site Author
-author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  type: "Person" # "Person" 또는 "Organization"
+  name: "Your Name"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:your.email@example.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://your-website.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+      url: "https://twitter.com/yourtwitterid"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "https://facebook.com/yourfacebookid"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/yourgithubid"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://instagram.com/yourinstagramid"
 
-# Site Footer
+# 구글 애널리틱스 설정 (사용시 활성화)
+analytics:
+  provider: false
+  # provider: "google"
+  google:
+    tracking_id: ""
+    anonymize_ip: false
+
+# 사이트 저자 정보
+author:
+  name: "Your Name"
+  avatar: "/assets/images/bio-photo.jpg"
+  bio: "음악 연구자, 사운드 디자이너"
+  location: "Seoul, Korea"
+  email: "your.email@example.com"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:your.email@example.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://your-website.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/yourtwitterid"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      url: "https://facebook.com/yourfacebookid"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/yourgithubid"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/yourinstagramid"
+
+# 사이트 푸터 링크 (필요시 URL 추가)
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url:
+      url: ""
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url:
+      url: ""
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: ""
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
-      # url:
+      url: ""
     - label: "Bitbucket"
       icon: "fab fa-fw fa-bitbucket"
-      # url:
+      url: ""
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: ""
 
-
-# Reading Files
+# 읽기 전용 파일 및 제외할 파일 설정
 include:
   - .htaccess
   - _pages
+
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -192,24 +201,24 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
+  - /docs
+  - /test
+
 keep_files:
   - .git
   - .svn
+
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-
-# Conversion
+# 변환 관련 설정
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-
-# Markdown Processing
+# Kramdown Markdown 설정
 kramdown:
   input: GFM
   hard_wrap: false
@@ -220,28 +229,22 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
-# Sass/SCSS
+# Sass/SCSS 설정
 sass:
   sass_dir: _sass
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: compressed
 
-
-# Outputting
+# 출력 관련
 permalink: /:categories/:title/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: ""
 
-
-# Pagination with jekyll-paginate
-paginate: 5 # amount of posts to show
+# Pagination 설정 (jekyll-paginate)
+paginate: 5
 paginate_path: /page:num/
 
-# Pagination with jekyll-paginate-v2
-# See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
-#   for configuration details
+# Pagination v2 (jekyll-paginate-v2)
 pagination:
-  # Set enabled to true to use paginate v2
-  # enabled: true
+  enabled: false # 필요시 true로 변경
   debug: false
   collection: 'posts'
   per_page: 10
@@ -257,8 +260,7 @@ pagination:
     before: 2
     after: 2
 
-
-# Plugins (previously gems:)
+# 플러그인 목록
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -267,10 +269,9 @@ plugins:
   - jekyll-include-cache
   - jekyll-remote-theme
   - jekyll-seo-tag
-  - jekyll-paginate
   - jekyll-archives
 
-# mimic GitHub Pages with --safe
+# GitHub Pages 모드용 whitelist 플러그인 (필요시 수정)
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
@@ -278,47 +279,24 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
 
-
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path>/my-awesome-category/index.html ~> path: /
+# Archives 관련
 category_archive:
   type: liquid
   path: /categories/
+
 tag_archive:
   type: liquid
   path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
 
-
-# HTML Compression
-# - https://jch.penibelst.de/
+# HTML 압축 설정 (옵션)
 compress_html:
   clippings: all
   ignore:
     envs: development
 
-
 # Defaults
 defaults:
-  # _posts
+  # 포스트 기본 레이아웃 및 옵션
   - scope:
       path: ""
       type: posts
@@ -326,6 +304,14 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
+
+  # 페이지 기본 레이아웃 (예: index.md) 추가
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: home
+      author_profile: true
